@@ -1,0 +1,206 @@
+<div style="padding-top: 100px; height: 410px; background: linear-gradient(135deg, #3b1f47, #23395d);">
+  <div class="flip-box">
+    <div class="flip-box-inner" [class.flipped]="isFlipped">
+      <div class="flip-box-front" >
+        <h2 style="text-align: center">Login</h2>
+
+        <form
+          #logForm="ngForm"
+          (ngSubmit)="login(logForm)"
+          style="padding-left: 10%"
+        >
+          <div style="display: flex; padding: 10px">
+            <label
+              style="width: 150px"
+              for="fullname"
+              [class.error-label]="fullname.invalid && fullname.touched"
+              >Fullname</label
+            >
+            <input
+              type="text"
+              name="fullname"
+              ngModel
+              required
+              #fullname="ngModel"
+              minlength="3"
+              [class.invalid-input]="fullname.invalid && fullname.touched"
+              [class.valid-input]="fullname.valid && fullname.touched"
+            />
+            <div *ngIf="fullname.invalid && fullname.touched">
+              <small *ngIf="fullname.errors?.['required']" style="color: red"
+                >Enter Valid Fullname</small
+              >
+              <small
+                *ngIf="fullname.errors?.['minlength']"
+                style="color: red"
+                class="error-msg"
+              >
+                Invalid Fullname
+              </small>
+            </div>
+          </div>
+
+          <div style="display: flex; padding: 10px">
+            <label
+              style="width: 150px"
+              for="password"
+              [class.error-label]="password.invalid && password.touched"
+              >Password</label
+            >
+            <input
+              type="password"
+              name="Password"
+              ngModel
+              required
+              #password="ngModel"
+              minlength="8"
+              [class.invalid-input]="password.invalid && password.touched"
+              [class.valid-input]="password.valid && password.touched"
+            />
+            <div *ngIf="password.invalid && password.touched">
+              <small
+                *ngIf="password.errors?.['required']"
+                style="color: red"
+                class="error-msg"
+                >Enter Valid Password</small
+              >
+              <small
+                *ngIf="password.errors?.['minlength']"
+                style="color: red"
+                class="error-msg"
+              >
+                Invalid Password.</small
+              >
+            </div>
+          </div>
+
+          <div style="padding-left: 90px">
+            <button type="submit" class="reg-btn">Sign-in</button>
+
+            <div style="margin-top: 60px">
+              Don't have an account?
+              <a href="#" (click)="toggleFlip()">Register</a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="flip-box-back">
+        <form
+          #regForm="ngForm"
+          (ngSubmit)="register(regForm)"
+          style="padding-left: 10%"
+        >
+          <div>
+            <h2 style="text-align:center;">Register</h2>
+          </div>
+          <div>
+            <div style="display: flex; padding: 10px">
+              <label
+                style="width: 150px"
+                for="name"
+                [class.error-label]="name.invalid && name.touched"
+                >name</label
+              >
+              <input
+                type="text"
+                name="name"
+                ngModel
+                required
+                #name="ngModel"
+                minlength="3"
+                [class.invalid-input]="name.invalid && name.touched"
+                [class.valid-input]="name.valid && name.touched"
+              />
+              <div *ngIf="name.invalid && name.touched">
+                <small *ngIf="name.errors?.['required']" style="color: red"
+                  >Name is required</small
+                >
+                <small
+                  *ngIf="name.errors?.['minlength']"
+                  style="color: red"
+                  class="error-msg"
+                  >Name Atleast 3 letters</small
+                >
+              </div>
+            </div>
+            <div style="display: flex; padding: 10px">
+              <label
+                style="width: 150px"
+                for="email"
+                [class.error-label]="email.invalid && email.touched"
+                >Email</label
+              >
+              <input
+                type="email"
+                name="email"
+                ngModel
+                required
+                #email="ngModel"
+                required
+                email
+                [class.invalid-input]="email.invalid && email.touched"
+                [class.valid-input]="email.valid && email.touched"
+              />
+              <div *ngIf="email.invalid && email.touched">
+                <small
+                  *ngIf="email.errors?.['required']"
+                  style="color: red"
+                  class="error-msg"
+                  >Email is Required</small
+                >
+                <small
+                  *ngIf="email.errors?.['email']"
+                  style="color: red"
+                  class="error-msg"
+                  >Enter valid Email</small
+                >
+              </div>
+            </div>
+            <div style="display: flex; padding: 10px">
+              <label
+                style="width: 150px"
+                for="password"
+                [class.error-label]="password.invalid && password.touched"
+                >Password</label
+              >
+              <input
+                type="password"
+                name="Password"
+                ngModel
+                required
+                #password="ngModel"
+                minlength="8"
+                [class.invalid-input]="password.invalid && password.touched"
+                [class.valid-input]="password.valid && password.touched"
+              />
+              <div *ngIf="password.invalid && password.touched">
+                <small
+                  *ngIf="password.errors?.['required']"
+                  style="color: red"
+                  class="error-msg"
+                  >Password is required</small
+                >
+                <small
+                  *ngIf="password.errors?.['minlength']"
+                  style="color: red"
+                  class="error-msg"
+                  >Password must be atleast 8 characters & Must contain 1
+                  uppercase letter and 1 number.</small
+                >
+              </div>
+            </div>
+            <div style="padding-left: 90px">
+              <button type="submit" class="reg-btn">Sign-up</button>
+
+              <div style="margin-top: 20px">
+                Already have an account?
+                <a href="#" (click)="toggleFlip()">Login</a>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

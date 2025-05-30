@@ -1,0 +1,65 @@
+.flip-box {
+  background-color: transparent;
+  width: 600px;
+  height: 300px;
+  perspective: 1000px;
+  margin: auto;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.flip-box-front {
+  z-index: 2;
+}
+
+.flip-box-back {
+  transform: rotateY(180deg);
+}
+  .invalid-input {
+  border: 2px solid red;
+  background-color: #ffe6e6; 
+
+}
+.valid-input{
+    border: 2px solid rgb(13, 160, 13);
+    background-color: #fcf8f8; 
+
+
+}
+
+.error-label {
+  color: red;
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9em;
+}
+.reg-btn {
+  margin-left: 90px;
+  
+  
+  margin-top: 20px;
+}
+
