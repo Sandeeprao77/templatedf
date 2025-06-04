@@ -17,12 +17,14 @@ export class FlrTdfComponent {
   login(form: NgForm) {
   if (form.valid) {
     console.log('Login Data:', form.value);
+    alert('Login successfully');
   }
 }
 
 register(form: NgForm) {
   if (form.valid) {
     console.log('Register Data:', form.value);
+    alert('Registered successfully');
   }
 }
 

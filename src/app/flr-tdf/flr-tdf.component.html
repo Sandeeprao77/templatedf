@@ -160,8 +160,8 @@
             <div style="display: flex; padding: 10px">
               <label
                 style="width: 150px"
-                for="password"
-                [class.error-label]="password.invalid && password.touched"
+                for="rpassword"
+                [class.error-label]="rpassword.invalid && rpassword.touched"
                 >Password</label
               >
               <input
@@ -169,20 +169,20 @@
                 name="Password"
                 ngModel
                 required
-                #password="ngModel"
+                #rpassword="ngModel"
                 minlength="8"
-                [class.invalid-input]="password.invalid && password.touched"
-                [class.valid-input]="password.valid && password.touched"
+                [class.invalid-input]="rpassword.invalid && rpassword.touched"
+                [class.valid-input]="rpassword.valid && rpassword.touched"
               />
-              <div *ngIf="password.invalid && password.touched">
+              <div *ngIf="rpassword.invalid && rpassword.touched">
                 <small
-                  *ngIf="password.errors?.['required']"
+                  *ngIf="rpassword.errors?.['required']"
                   style="color: red"
                   class="error-msg"
                   >Password is required</small
                 >
                 <small
-                  *ngIf="password.errors?.['minlength']"
+                  *ngIf="rpassword.errors?.['minlength']"
                   style="color: red"
                   class="error-msg"
                   >Password must be atleast 8 characters & Must contain 1
