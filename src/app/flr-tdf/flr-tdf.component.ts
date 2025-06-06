@@ -10,6 +10,7 @@ import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 })
 export class FlrTdfComponent {
    isFlipped = false;
+   
 
   toggleFlip() {
     this.isFlipped = !this.isFlipped;

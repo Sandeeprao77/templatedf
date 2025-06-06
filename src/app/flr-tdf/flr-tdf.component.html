@@ -1,24 +1,31 @@
-<div style="padding-top: 100px; height: 410px; background: linear-gradient(135deg, #3b1f47, #23395d);">
+<div
+  style="
+    padding-top: 100px;
+    height: 500px;
+    background: linear-gradient(135deg, #3b1f47, #23395d);
+  "
+>
   <div class="flip-box">
     <div class="flip-box-inner" [class.flipped]="isFlipped">
-      <div class="flip-box-front" >
+      <div class="flip-box-front">
         <h2 style="text-align: center">Login</h2>
 
         <form
           #logForm="ngForm"
-          (ngSubmit)="login(logForm)"
-          style="padding-left: 10%"
+          style="display: flex; flex-direction: column; align-items: center"
         >
-          <div style="display: flex; padding: 10px">
-            <label
-              style="width: 150px"
-              for="fullname"
-              [class.error-label]="fullname.invalid && fullname.touched"
-              >Fullname</label
-            >
+          <div
+            style="
+              padding: 10px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            "
+          >
             <input
               type="text"
               name="fullname"
+              placeholder="Name"
               ngModel
               required
               #fullname="ngModel"
@@ -40,16 +47,18 @@
             </div>
           </div>
 
-          <div style="display: flex; padding: 10px">
-            <label
-              style="width: 150px"
-              for="password"
-              [class.error-label]="password.invalid && password.touched"
-              >Password</label
-            >
+          <div
+            style="
+              padding: 10px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            "
+          >
             <input
               type="password"
               name="Password"
+              placeholder="Password"
               ngModel
               required
               #password="ngModel"
@@ -74,13 +83,13 @@
             </div>
           </div>
 
-          <div style="padding-left: 90px">
+          <div style="margin-top: 40px; display: flex; justify-content: center">
             <button type="submit" class="reg-btn">Sign-in</button>
+          </div>
 
-            <div style="margin-top: 60px">
-              Don't have an account?
-              <a href="#" (click)="toggleFlip()">Register</a>
-            </div>
+          <div style="margin-top: 25px; padding-bottom: 20px;">
+            Don't have an account?
+            <a href="#" (click)="toggleFlip()">Register</a>
           </div>
         </form>
       </div>
@@ -89,22 +98,24 @@
         <form
           #regForm="ngForm"
           (ngSubmit)="register(regForm)"
-          style="padding-left: 10%"
+         
         >
           <div>
-            <h2 style="text-align:center;">Register</h2>
+            <h2 style="text-align: center">Register</h2>
           </div>
           <div>
-            <div style="display: flex; padding: 10px">
-              <label
-                style="width: 150px"
-                for="name"
-                [class.error-label]="name.invalid && name.touched"
-                >name</label
-              >
+            <div
+              style="
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              "
+            >
               <input
                 type="text"
                 name="name"
+                placeholder="Name"
                 ngModel
                 required
                 #name="ngModel"
@@ -124,16 +135,18 @@
                 >
               </div>
             </div>
-            <div style="display: flex; padding: 10px">
-              <label
-                style="width: 150px"
-                for="email"
-                [class.error-label]="email.invalid && email.touched"
-                >Email</label
-              >
+            <div
+              style="
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              "
+            >
               <input
                 type="email"
                 name="email"
+                placeholder="Email"
                 ngModel
                 required
                 #email="ngModel"
@@ -157,16 +170,18 @@
                 >
               </div>
             </div>
-            <div style="display: flex; padding: 10px">
-              <label
-                style="width: 150px"
-                for="rpassword"
-                [class.error-label]="rpassword.invalid && rpassword.touched"
-                >Password</label
-              >
+            <div
+              style="
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              "
+            >
               <input
                 type="password"
                 name="Password"
+                placeholder="password"
                 ngModel
                 required
                 #rpassword="ngModel"
@@ -185,18 +200,19 @@
                   *ngIf="rpassword.errors?.['minlength']"
                   style="color: red"
                   class="error-msg"
-                  >Password must be atleast 8 characters & Must contain 1
-                  uppercase letter and 1 number.</small
+                  >8 characters & Upper case .</small
                 >
               </div>
             </div>
-            <div style="padding-left: 90px">
+            <div
+              style="margin-top: 10px; display: flex; justify-content: center"
+            >
               <button type="submit" class="reg-btn">Sign-up</button>
+            </div>
 
-              <div style="margin-top: 20px">
-                Already have an account?
-                <a href="#" (click)="toggleFlip()">Login</a>
-              </div>
+            <div style="margin-top: 25px; padding-bottom: 20px; padding-left: 130px;">
+              Already have an account?
+              <a href="#" (click)="toggleFlip()">Login</a>
             </div>
           </div>
         </form>
